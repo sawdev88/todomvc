@@ -1,9 +1,19 @@
+var displayTodosButton = document.getElementById('displayTodosButton');
+var toggleAllButton = document.getElementById('toggleAllButton');
+
 console.log('TODOS');
 
-const yeah = function () {
-  console.log('YES!');
-}
+// View
+displayTodosButton.addEventListener('click', function () {
+  todos.displayTodos();
+});
 
+toggleAllButton.addEventListener('click', function () {
+  todos.toggleAll();
+})
+
+
+// Logic
 const todos = {
   list: [{item: 'item 1', complete: false}, {item: 'item 2', complete: true}, {item: 'item 3', complete: false}],
 
@@ -13,8 +23,7 @@ const todos = {
       complete: complete
     });
     this.displayTodos();
-    yeah();
-  },
+    },
 
   displayTodos: function() {
     if(this.list.length > 0) {
